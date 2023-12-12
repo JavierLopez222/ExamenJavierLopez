@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/llManu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFA3A3">
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llMenuDentro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_margin="40dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25dp">
+            <TextView
+                android:id="@+id/TituloMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menú"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:background="#AAFFA3"/>
+        </androidx.cardview.widget.CardView>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:src="@drawable/pokemonportada"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+        <Button
+            android:id="@+id/btnInsertar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insertar pokemon"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+        <Button
+            android:id="@+id/btnVisualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visualizar pokemon"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
