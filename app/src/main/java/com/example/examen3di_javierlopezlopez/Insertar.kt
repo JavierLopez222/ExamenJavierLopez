@@ -29,6 +29,8 @@ class Insertar : AppCompatActivity() {
     lateinit var insertarFechaET:TextInputEditText
     lateinit var btnInsertar:ImageView
 
+    lateinit var intentMenu:Intent
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +53,7 @@ class Insertar : AppCompatActivity() {
         spinner = findViewById<Spinner>(R.id.spinner)
         btnInsertar = findViewById<ImageView>(R.id.btnInsertar)
 
-        btnInsertar.setOnClickListener{
 
-        }
 
         val spinner: Spinner = findViewById<Spinner>(R.id.spinner)
         val opciones = arrayOf("Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Planta", " Siniestro")
@@ -84,6 +84,14 @@ class Insertar : AppCompatActivity() {
         var comentario = insertarComentarioET.text.toString().trim()
         var fecha = insertarFechaET.text.toString().trim()
 
+
+        intentMenu.putExtra(nombre, "nombre")
+        intentMenu.putExtra(entrenador, "entrenador")
+        intentMenu.putExtra(estatura, "estatura")
+        intentMenu.putExtra(comentario, "comentario")
+
+
+
         var validar = true
 
         if(nombre.isEmpty()){
@@ -93,10 +101,10 @@ class Insertar : AppCompatActivity() {
             insertarNombreET.error = "El nombre debe tener como mínimo 3 carácteres"
             validar = false
         }
-        if(!nombre.matches(Regex("^[A-Z][a-z]"))){
-            insertarNombreET.error = "La primera letra debe ser mayúscula"
-            validar = false
-        }
+        //if(!nombre.matches(Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)"))){
+        //    insertarNombreET.error = "La primera letra debe ser mayúscula"
+        //    validar = false
+        //}
         if(entrenador.isEmpty()){
             insertarEntrenadorET.error = "Este campo no puede estar vacío"
         }
